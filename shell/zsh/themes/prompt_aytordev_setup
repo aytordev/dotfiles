@@ -1,0 +1,38 @@
+#!/usr/bin/env zsh
+
+FIRST_CHARACTER_OK="🚀"
+FIRST_CHARACTER_KO="🚀"
+DIRTY="✗"
+NONE="✓"
+
+prompt_aytordev_pwd() {
+  local -r prompt_short_dir=$("$DOTLY_PATH/bin/dot" core short_pwd)
+  print -n "%F{yellow}${prompt_short_dir}"
+}
+
+prompt_aytordev_git() {
+  [[ -n ${git_info} ]] && print -n "%F{white} on${(e)git_info[prompt]}"
+}
+
+prompt_aytordev_precmd() {
+  (( ${+functions[git-info]} )) && git-info
+}
+
+prompt_aytordev_setup() {
+  local prompt_aytordev_status='%(?:%F{green}{%F{white}${FIRST_CHARACTER_OK}%F{green}}:%F{red}{%F{white}${FIRST_CHARACTER_KO}%F{red}})'
+
+  autoload -Uz add-zsh-hook && add-zsh-hook precmd prompt_aytordev_precmd
+
+  prompt_opts=(cr percent sp subst)
+
+  zstyle ':zim:git-info:branch' format '%F{green}%b'
+  zstyle ':zim:git-info:commit' format '%c'
+  zstyle ':zim:git-info:clean' format '%F{white}$NONE'
+  zstyle ':zim:git-info:dirty' format '%F{yellow}$DIRTY'
+  zstyle ':zim:git-info:keys' format 'prompt' ' %F{cyan}%b%c %C%D'
+
+  PS1="${prompt_aytordev_status} \$(prompt_aytordev_pwd)\$(prompt_aytordev_git)%f "
+  RPS1=''
+}
+
+prompt_aytordev_setup "${@}"

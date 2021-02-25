@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+source "$DOTFILES_PATH/shell/zsh/themes/prompt_aytordev_setup"
+
+prompt_aytordev-s_setup() {
+  prompt_codely_setup "$@"
+}
+
+prompt_aytordev-s_setup "${@}"
