@@ -1,0 +1,5 @@
+tap "denisidoro/tools"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+cask "iterm2-nightly"
