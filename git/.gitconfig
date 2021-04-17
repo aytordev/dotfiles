@@ -1,3 +1,5 @@
 [user]
 	name = Aytor Vicente Martínez
 	email = avicentemart@outlook.com
+[core]
+	excludesfile = /Users/aytordev/.gitignore_global
