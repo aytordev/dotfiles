@@ -4,31 +4,82 @@
     :Default
     {
       :default            true
-      :alone              20
-      :delay              200
-      :held               100
-      :sim                100
+      :alone              20              ;; Hold for ... ms register single tap.
+      :delay              30              ;; Time after which key pressed is delayed.
+      :held               100             ;; TODO: Not sure what it's for.
+      :sim                50              ;; Keys need to be pressed within this threshold
+                                          ;; to be considered simultaneous.
       :simlayer-threshold 220
     }
   }
   :applications
   {
     ;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
-    :Toolbox ["com.jetbrains.toolbox"]
-    :WebStorm ["com.jetbrains.webstorm"]
+    :Notion                              ["notion.id"]
+    :Toolbox                             ["com.jetbrains.toolbox"]
+    :WebStorm                            ["com.jetbrains.webstorm"]
+  }
+  :froms
+  {
+    :line-delete                         { :modi :left_command :key :delete_or_backspace }
+    :line-duplicate                      { :modi :left_command :key :d }
+    :selection-extend                    { :modi :left_option :key :up_arrow }
+    :selection-shrink                    { :modi :left_option :key :down_arrow }
+    :show-recent                         { :modi :left_command :key :e }
+    :sidebar-primary-toggle              { :modi :left_command :key :1 }
+    :sidebar-secondary-toggle            { :modi :left_command :key :2 }
+    :switch-account                      { :modi :left_command :key :caps_lock }
+    :zoom-in                             { :modi :left_command :key :equal_sign }
+    :zoom-out                            { :modi :left_command :key :hyphen }
+  }
+  :layers
+  {
+    :tab-mode                            { :key :tab }
+    :caps-mode                           { :key :caps_lock }
+  }
+  :simlayers
+  {
+    :emoji-mode                          { :key :e }
+    :open-mode                           { :key :o }
+    :script-mode                         { :key :s }
   }
   :templates
   {
-    :open-app "osascript -e 'tell application \"%s\" to activate'"
+    :open-app                            "osascript -e 'tell application \"%s\" to activate'"
+    :type                                "$HOME/.dotfiles/bin/sdot mac type \"%s\""
+    :paste                               "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\""
+    :paste-and-return                    "$HOME/.dotfiles/bin/sdot mac paste_text \"%s\" --returning"
+    :open-in-chrome                      "$HOME/.dotfiles/bin/sdot mac open_chrome_url \"%s\""
+    :wait_seconds                        "osascript -e 'delay %s'"
   }
   :main
   [
-    ;; ------------ Application specific ------------
-    ;; ------------ Remaps               ------------
-    ;; ------------ Launchers            ------------
-    {:des "[launch] iTerm2"             :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
-    {:des "[launch] JetBrains Toolbox"  :rules [[:!CTOt [:open-app "Toolbox"]]]}
-    {:des "[launch] JetBrains WebStorm" :rules [[:!CTOw [:open-app "WebStorm"]]]}
+    { :des "[launch] iTerm2"              :rules [[:!CTOspacebar "open -a 'iTerm.app'"]] }
+    { :des "[launch] Notion"              :rules [[:!CTOn [:open-app "Notion"]]] }
+    { :des "[notion] Show recent pages"   :rules [:Notion [:show-recent :!Cp]] }
+    { :des "[notion] Toggle sidebar"      :rules [:Notion [:sidebar-primary-toggle :!Cbackslash]] }
+    { :des "[notion] Extend selection"    :rules [:Notion [:selection-extend :!Sup_arrow] [:selection-shrink :!Sdown_arrow]] }
+    { :des "[launch] JetBrains Toolbox"   :rules [[:!CTOt [:open-app "Toolbox"]]] }
+    { :des "[launch] JetBrains WebStorm"  :rules [[:!CTOw [:open-app "WebStorm"]]] }
+    ;; ------------ Modes ------------
+    { :des "Emoji mode"                   :rules [:emoji-modeon
+                                                   [:d [:paste "👎"]]
+                                                   [:g [:paste "😬"]]
+                                                   [:l [:paste "😂"]]
+                                                   [:p [:paste "➕"]]
+                                                   [:s [:paste "👍"]]
+                                                   [:v [:paste "✅"]]] }
+    { :des "Open apps mode"               :rules [:open-mode
+                                                   [:c [:open-app "Google Chrome"]]
+                                                   [:w [:open-app "WebStorm"]]
+                                                   [:n [:open-app "Notion"]]
+                                                   [:t [:open-app "iTerm"]]] }
+    { :des "Open tabs mode"               :rules [:caps-mode
+                                                   ;; [:a [:open-in-chrome "amazon.es"]
+                                                   ] }
+    { :des   "Script mode"                :rules [:script-mode
+                                                   ;; Generate uuid
+                                                   [:u "$HOME/.dotfiles/bin/sdot utils uuid_code"]] }
   ]
   ;; ------------ Cheatsheet ------------
   ;; !  stand for mandatory
