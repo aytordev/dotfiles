@@ -1,30 +1,47 @@
-{:profiles
- {:Default
-  {:alone              500
-   :default            true
-   :delay              200
-   :held               500
-   :sim                200
-   :simlayer-threshold 220}}
-
- :main
- [;; ------------ Remaps ------------
-
-   ;; ------------ Launchers ------------
-   {:des   "[launch] iTerm2"
-    :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
- ]
- ;; ------------ Cheatsheet ------------
- ;; !  stand for mandatory
- ;; #  stand for optional
- ;; !! stand for mandatory command + control + optional + shift (hyper)
- ;; ## stand for optional any
- ;; C T O S for left command control option shift
- ;; Q W E R for right command control option shift
- ;; F for fn
- ;; need to prefix C T O S F Q W E R with ! or #
- :cheatsheet
- {:!Ca        "command a"
+{
+  :profiles
+  {
+    :Default
+    {
+      :default            true
+      :alone              20
+      :delay              200
+      :held               100
+      :sim                100
+      :simlayer-threshold 220
+    }
+  }
+  :applications
+  {
+    ;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
+    :Toolbox ["com.jetbrains.toolbox"]
+    :WebStorm ["com.jetbrains.webstorm"]
+  }
+  :templates
+  {
+    :open-app "osascript -e 'tell application \"%s\" to activate'"
+  }
+  :main
+  [
+    ;; ------------ Application specific ------------
+    ;; ------------ Remaps               ------------
+    ;; ------------ Launchers            ------------
+    {:des "[launch] iTerm2"             :rules [[:!CTOspacebar "open -a 'iTerm.app'"]]}
+    {:des "[launch] JetBrains Toolbox"  :rules [[:!CTOt [:open-app "Toolbox"]]]}
+    {:des "[launch] JetBrains WebStorm" :rules [[:!CTOw [:open-app "WebStorm"]]]}
+  ]
+  ;; ------------ Cheatsheet ------------
+  ;; !  stand for mandatory
+  ;; #  stand for optional
+  ;; !! stand for mandatory command + control + optional + shift (hyper)
+  ;; ## stand for optional any
+  ;; C T O S for left command control option shift
+  ;; Q W E R for right command control option shift
+  ;; F for fn
+  ;; need to prefix C T O S F Q W E R with ! or #
+  :cheatsheet
+  {
+  :!Ca        "command a"
   :!Ta        "control a"
   :!Oa        "option a"
   :!Sa        "shift a"
@@ -33,4 +50,6 @@
   :!Cspacebar "command space"
   :!Fa        "fn a"
   :##a        "keycode a optional any"
-  :!!a        "mandatory hyper (control command option shift) a "}}
+  :!!a        "mandatory hyper (control command option shift) a "
+  }
+}
