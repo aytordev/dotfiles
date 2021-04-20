@@ -248,6 +248,20 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[launch] JetBrains PyCharm",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "p",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e 'tell application \"PyCharm\" to activate'"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[launch] Safari",
         "manipulators" : [ {
           "from" : {
@@ -258,6 +272,20 @@
           },
           "to" : [ {
             "shell_command" : "osascript -e 'tell application \"Safari\" to activate'"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
+        "description" : "[launch] Visual Studio Code",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "v",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_control", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e 'tell application \"Visual Studio Code\" to activate'"
           } ],
           "type" : "basic"
         } ]
@@ -673,6 +701,51 @@
           }
         }, {
           "from" : {
+            "key_code" : "j"
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e 'tell application \"JetBrains Toolbox\" to activate'"
+          } ],
+          "conditions" : [ {
+            "name" : "open-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "open-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "osascript -e 'tell application \"JetBrains Toolbox\" to activate'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "o"
+            }, {
+              "key_code" : "j"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "open-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
             "key_code" : "n"
           },
           "to" : [ {
@@ -718,6 +791,51 @@
           }
         }, {
           "from" : {
+            "key_code" : "p"
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e 'tell application \"PyCharm\" to activate'"
+          } ],
+          "conditions" : [ {
+            "name" : "open-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "open-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "osascript -e 'tell application \"PyCharm\" to activate'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "o"
+            }, {
+              "key_code" : "p"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "open-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
             "key_code" : "s"
           },
           "to" : [ {
@@ -747,6 +865,51 @@
               "key_code" : "o"
             }, {
               "key_code" : "s"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : true,
+              "key_down_order" : "strict",
+              "key_up_order" : "strict_inverse",
+              "key_up_when" : "any",
+              "to_after_key_up" : [ {
+                "set_variable" : {
+                  "name" : "open-mode",
+                  "value" : 0
+                }
+              } ]
+            }
+          }
+        }, {
+          "from" : {
+            "key_code" : "v"
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e 'tell application \"Visual Studio Code\" to activate'"
+          } ],
+          "conditions" : [ {
+            "name" : "open-mode",
+            "value" : 1,
+            "type" : "variable_if"
+          } ],
+          "type" : "basic"
+        }, {
+          "type" : "basic",
+          "parameters" : {
+            "basic.simultaneous_threshold_milliseconds" : 250
+          },
+          "to" : [ {
+            "set_variable" : {
+              "name" : "open-mode",
+              "value" : 1
+            }
+          }, {
+            "shell_command" : "osascript -e 'tell application \"Visual Studio Code\" to activate'"
+          } ],
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "o"
+            }, {
+              "key_code" : "v"
             } ],
             "simultaneous_options" : {
               "detect_key_down_uninterruptedly" : true,

@@ -16,9 +16,12 @@
   {
     ;; To obtain the app ID: `grep -A1 "CFBundleIdentifier" /Applications/The.app/Contents/Info.plist`
     :Chrome                              ["com.google.Chrome", "com.google.Chrome.beta"]
+    :VSCode                              ["com.microsoft.VSCode"]
     :Contexts                            ["com.contextsformac.Contexts"]
     :Finder                              ["com.apple.finder"]
+    :Firefox                             ["org.mozilla.firefox", "org.mozilla.firefoxdeveloperedition"]
     :Notion                              ["notion.id"]
+    :PyCharm                             ["com.jetbrains.pycharm"]
     :Safari                              ["com.apple.Safari"]
     :Toolbox                             ["com.jetbrains.toolbox"]
     :WebStorm                            ["com.jetbrains.webstorm"]
@@ -71,7 +74,9 @@
     { :des "[notion] Extend selection"    :rules [:Notion [:selection-extend :!Sup_arrow] [:selection-shrink :!Sdown_arrow]] }
     { :des "[launch] JetBrains Toolbox"   :rules [[:!CTOt [:open-app "Toolbox"]]] }
     { :des "[launch] JetBrains WebStorm"  :rules [[:!CTOw [:open-app "WebStorm"]]] }
+    { :des "[launch] JetBrains PyCharm"   :rules [[:!CTOp [:open-app "PyCharm"]]] }
     { :des "[launch] Safari"              :rules [[:!CTOs [:open-app "Safari"]]] }
+    { :des "[launch] Visual Studio Code"  :rules [[:!CTOv [:open-app "Visual Studio Code"]]] }
 
     ;; ------------ Modes ------------
     { :des "Emoji mode"                   :rules [:emoji-mode
@@ -85,8 +90,11 @@
                                                    [:f [:open-app "Firefox"]]
                                                    [:c [:open-app "Google Chrome"]]
                                                    [:t [:open-app "iTerm"]]
+                                                   [:j [:open-app "JetBrains Toolbox"]]
                                                    [:n [:open-app "Notion"]]
+                                                   [:p [:open-app "PyCharm"]]
                                                    [:s [:open-app "Safari"]]
+                                                   [:v [:open-app "Visual Studio Code"]]
                                                    [:w [:open-app "WebStorm"]]] }
     { :des "Open tabs mode"               :rules [:caps-mode
                                                    ;; [:a [:open-in-chrome "amazon.es"]
