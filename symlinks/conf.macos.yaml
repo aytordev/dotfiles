@@ -20,5 +20,8 @@
     ~/bin/touch: /opt/homebrew/bin/gtouch
     ~/bin/zsh: /opt/homebrew/bin/zsh
     ~/Library/Preferences/com.knollsoft.Rectangle.plist: os/mac/rectangle/com.knollsoft.Rectangle.plist
+    ~/Library/Application Support/Code/User/keybindings.json: editors/code/keybindings.json
+    ~/Library/Application Support/Code/User/settings.json: editors/code/settings.json
+    ~/Library/Application Support/Code/User/snippets: editors/code/snippets
 
 

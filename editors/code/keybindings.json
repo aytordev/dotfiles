@@ -1,0 +1,6 @@
+[
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.toggleSidebarVisibility"
+  }
+]

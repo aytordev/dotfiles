@@ -1,0 +1,103 @@
+{
+    // Breadcrumbs
+    "breadcrumbs.filePath": "on",
+    "breadcrumbs.enabled": true,
+    // Debug
+    "debug.openDebug": "neverOpen",
+    "debug.showInStatusBar": "never",
+    "debug.toolBarLocation": "hidden",
+    "debug.console.fontSize": 15,
+    // Editor
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": true
+    },
+    "editor.formatOnSave": true,
+    "editor.renderLineHighlight": "gutter",
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.scrollBeyondLastLine": false,
+    // "editor.tabSize": 4,
+    "editor.lineHeight": 26,
+    // "editor.lineNumbers": "off",
+    "editor.occurrencesHighlight": false,
+    "editor.overviewRulerBorder": false,
+    "editor.renderIndentGuides": true,
+    "editor.folding": false,
+    "editor.snippetSuggestions": "top",
+    "editor.lightbulb.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorStyle": "line",
+    "editor.fontFamily": "'JetBrains Mono'",
+    "editor.fontLigatures": true,
+    "editor.fontSize": 15,
+    // Explorer
+    "explorer.openEditors.visible": 0,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.decorations.badges": false,
+    // Extensions
+    "extensions.ignoreRecommendations": true,
+    // Files
+    "files.exclude": {
+        "**/node_modules/": true,
+        "**/.git": true,
+        "**/.next": true,
+        "**/.DS_Store": true,
+        "**/package-lock.json": true,
+        "**/yarn.lock": true,
+        "vendor": true,
+        "**/npm-debug.log": true,
+        "**/dist": true,
+        "**/*.bs.js": true
+    },
+    "files.associations": {
+        "*.toml": "toml",
+        "*.njk": "html"
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.eol": "\n",
+    // Search
+    "search.quickOpen.includeHistory": false,
+    "search.searchEditor.defaultNumberOfContextLines": null,
+    "search.smartCase": true,
+    // "search.useIgnoreFiles": false,
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/.git": true,
+        "dist": true,
+        "out": true,
+        "coverage": true
+    },
+    // Terminal
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.copyOnSelection": true,
+    "terminal.integrated.fontSize": 15,
+    "terminal.integrated.inheritEnv": false,
+    // Window
+    "window.autoDetectColorScheme": true,
+    "window.restoreWindows": "all",
+    "window.newWindowDimensions": "maximized",
+    // Workbench
+    "workbench.activityBar.visible": false,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "workbench.colorTheme": "MacOS Modern Light - Big Sur Xcode Default",
+    "workbench.preferredLightColorTheme": "MacOS Modern Light - Big Sur Xcode Default",
+    "workbench.preferredDarkColorTheme": "MacOS Modern Dark - Big Sur Xcode Default",
+    "workbench.list.horizontalScrolling": true,
+    "workbench.panel.defaultLocation": "right",
+    "workbench.fontAliasing": "antialiased",
+    "workbench.startupEditor": "none",
+    "workbench.settings.editor": "json",
+    "workbench.editor.showIcons": true,
+    "workbench.editor.showTabs": false,
+    "workbench.settings.enableNaturalLanguageSearch": false, // formatting only supports LF line endings
+    "workbench.sideBar.location": "right",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter-notebook",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "workbench.iconTheme": "macos-modern-big-sur-icon-theme",
+}
