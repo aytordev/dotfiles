@@ -58,6 +58,7 @@
   }
   :main
   [
+    { :des "[launch] Firefox"             :rules [[:!CTOf [:open-app "Firefox"]]] }
     { :des "[launch] Google Chrome"       :rules [[:!CTOc [:open-app "Google Chrome"]]] }
     { :des "[chrome] Show recent tabs"    :rules [:Chrome [:show-recent :!CSa]] }
     { :des "[chrome] Inspect element"     :rules [:Chrome [:!CSi :!CSc]] }
@@ -81,6 +82,7 @@
                                                    [:s [:paste "👍"]]
                                                    [:v [:paste "✅"]]] }
     { :des "Open apps mode"               :rules [:open-mode
+                                                   [:f [:open-app "Firefox"]]
                                                    [:c [:open-app "Google Chrome"]]
                                                    [:t [:open-app "iTerm"]]
                                                    [:n [:open-app "Notion"]]
