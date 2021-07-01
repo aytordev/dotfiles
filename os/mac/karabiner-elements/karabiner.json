@@ -16,7 +16,7 @@
         "description" : "[launch] Firefox",
         "manipulators" : [ {
           "from" : {
-            "key_code" : "f",
+            "key_code" : "m",
             "modifiers" : {
               "mandatory" : [ "left_command", "left_control", "left_option" ]
             }
@@ -30,7 +30,7 @@
         "description" : "[launch] Google Chrome",
         "manipulators" : [ {
           "from" : {
-            "key_code" : "c",
+            "key_code" : "g",
             "modifiers" : {
               "mandatory" : [ "left_command", "left_control", "left_option" ]
             }

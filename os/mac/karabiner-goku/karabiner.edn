@@ -61,8 +61,8 @@
   }
   :main
   [
-    { :des "[launch] Firefox"             :rules [[:!CTOf [:open-app "Firefox"]]] }
-    { :des "[launch] Google Chrome"       :rules [[:!CTOc [:open-app "Google Chrome"]]] }
+    { :des "[launch] Firefox"             :rules [[:!CTOm [:open-app "Firefox"]]] }
+    { :des "[launch] Google Chrome"       :rules [[:!CTOg [:open-app "Google Chrome"]]] }
     { :des "[chrome] Show recent tabs"    :rules [:Chrome [:show-recent :!CSa]] }
     { :des "[chrome] Inspect element"     :rules [:Chrome [:!CSi :!CSc]] }
     { :des "[chrome] Toggle console"      :rules [:Chrome [:!CTOt :!COj]] }
