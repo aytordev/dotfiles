@@ -23,6 +23,7 @@
     :Notion                              ["notion.id"]
     :PyCharm                             ["com.jetbrains.pycharm"]
     :Safari                              ["com.apple.Safari"]
+    :Spotify                             ["com.spotify.client"]
     :Toolbox                             ["com.jetbrains.toolbox"]
     :WebStorm                            ["com.jetbrains.webstorm"]
   }
@@ -76,6 +77,7 @@
     { :des "[launch] JetBrains WebStorm"  :rules [[:!CTOw [:open-app "WebStorm"]]] }
     { :des "[launch] JetBrains PyCharm"   :rules [[:!CTOp [:open-app "PyCharm"]]] }
     { :des "[launch] Safari"              :rules [[:!CTOs [:open-app "Safari"]]] }
+    { :des "[launch] Spotify"             :rules [[:!COy [:open-app "Spotify"]]] }
     { :des "[launch] Visual Studio Code"  :rules [[:!CTOv [:open-app "Visual Studio Code"]]] }
 
     ;; ------------ Modes ------------

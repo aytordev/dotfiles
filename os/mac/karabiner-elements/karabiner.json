@@ -276,6 +276,20 @@
           "type" : "basic"
         } ]
       }, {
+        "description" : "[launch] Spotify",
+        "manipulators" : [ {
+          "from" : {
+            "key_code" : "y",
+            "modifiers" : {
+              "mandatory" : [ "left_command", "left_option" ]
+            }
+          },
+          "to" : [ {
+            "shell_command" : "osascript -e 'tell application \"Spotify\" to activate'"
+          } ],
+          "type" : "basic"
+        } ]
+      }, {
         "description" : "[launch] Visual Studio Code",
         "manipulators" : [ {
           "from" : {
