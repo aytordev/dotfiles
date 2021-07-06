@@ -62,23 +62,33 @@
   }
   :main
   [
-    { :des "[launch] Firefox"             :rules [[:!CTOm [:open-app "Firefox"]]] }
-    { :des "[launch] Google Chrome"       :rules [[:!CTOg [:open-app "Google Chrome"]]] }
-    { :des "[chrome] Show recent tabs"    :rules [:Chrome [:show-recent :!CSa]] }
-    { :des "[chrome] Inspect element"     :rules [:Chrome [:!CSi :!CSc]] }
-    { :des "[chrome] Toggle console"      :rules [:Chrome [:!CTOt :!COj]] }
-    { :des "[chrome] Switch profile"      :rules [:Chrome [:switch-account [:!CSm :return_or_enter]]] }
-    { :des "[launch] iTerm2"              :rules [[:!CTOspacebar "open -a 'iTerm.app'"]] }
-    { :des "[launch] Notion"              :rules [[:!CTOn [:open-app "Notion"]]] }
-    { :des "[notion] Show recent pages"   :rules [:Notion [:show-recent :!Cp]] }
-    { :des "[notion] Toggle sidebar"      :rules [:Notion [:sidebar-primary-toggle :!Cbackslash]] }
-    { :des "[notion] Extend selection"    :rules [:Notion [:selection-extend :!Sup_arrow] [:selection-shrink :!Sdown_arrow]] }
-    { :des "[launch] JetBrains Toolbox"   :rules [[:!CTOt [:open-app "Toolbox"]]] }
-    { :des "[launch] JetBrains WebStorm"  :rules [[:!CTOw [:open-app "WebStorm"]]] }
-    { :des "[launch] JetBrains PyCharm"   :rules [[:!CTOp [:open-app "PyCharm"]]] }
-    { :des "[launch] Safari"              :rules [[:!CTOs [:open-app "Safari"]]] }
-    { :des "[launch] Spotify"             :rules [[:!COy [:open-app "Spotify"]]] }
-    { :des "[launch] Visual Studio Code"  :rules [[:!CTOv [:open-app "Visual Studio Code"]]] }
+    ;; ------------ Web Browsers ------------
+    { :des "[CTO+1] [launch] Firefox"             :rules [[:!CTO1 [:open-app "Firefox"]]] }
+    { :des "[CTO+2] [launch] Google Chrome"       :rules [[:!CTO2 [:open-app "Google Chrome"]]] }
+    { :des "[CTO+3] [launch] Safari"              :rules [[:!CTO3 [:open-app "Safari"]]] }
+      ;; ------------ Browsers shortcuts ------------
+      { :des "[CS+a] [chrome] Show recent tabs"    :rules [:Chrome [:show-recent :!CSa]] }
+      { :des "[CS+i || CS+c] [chrome] Inspect element"     :rules [:Chrome [:!CSi :!CSc]] }
+      { :des "[CTO+t || CO+j] [chrome] Toggle console"      :rules [:Chrome [:!CTOt :!COj]] }
+      { :des "[CS+m || Return or Enter] [chrome] Switch profile"      :rules [:Chrome [:switch-account [:!CSm :return_or_enter]]] }
+    ;; ------------------------
+
+    ;; ------------ Development tools ------------
+    { :des "[CTO+t] [launch] JetBrains Toolbox"   :rules [[:!CTOt [:open-app "Toolbox"]]] }
+      ;; ------------ IDE's ------------
+      { :des "[CTO+1] [launch] JetBrains WebStorm"  :rules [[:!CTOw [:open-app "WebStorm"]]] }
+      { :des "[CTO+1] [launch] JetBrains PyCharm"   :rules [[:!CTOp [:open-app "PyCharm"]]] }
+      { :des "[CTO+1] [launch] Visual Studio Code"  :rules [[:!CTOv [:open-app "Visual Studio Code"]]] }
+    { :des "[CTO+1] [launch] iTerm2"              :rules [[:!CTOspacebar "open -a 'iTerm.app'"]] }
+
+    { :des "[CTO+1] [launch] Notion"              :rules [[:!CTOn [:open-app "Notion"]]] }
+    ;; ------------ Notion shortcuts ------------
+    { :des "[CTO+1] [notion] Show recent pages"   :rules [:Notion [:show-recent :!Cp]] }
+    { :des "[CTO+1] [notion] Toggle sidebar"      :rules [:Notion [:sidebar-primary-toggle :!Cbackslash]] }
+    { :des "[CTO+1] [notion] Extend selection"    :rules [:Notion [:selection-extend :!Sup_arrow] [:selection-shrink :!Sdown_arrow]] }
+    ;; ------------------------
+    ;; ------------ Some stuff ------------
+    { :des "[CTO+1] [launch] Spotify"             :rules [[:!COy [:open-app "Spotify"]]] }
 
     ;; ------------ Modes ------------
     { :des "Emoji mode"                   :rules [:emoji-mode
@@ -89,13 +99,14 @@
                                                    [:s [:paste "👍"]]
                                                    [:v [:paste "✅"]]] }
     { :des "Open apps mode"               :rules [:open-mode
-                                                   [:f [:open-app "Firefox"]]
-                                                   [:c [:open-app "Google Chrome"]]
+                                                   [:1 [:open-app "Firefox"]]
+                                                   [:2 [:open-app "Google Chrome"]]
+                                                   [:3 [:open-app "Safari"]]
                                                    [:t [:open-app "iTerm"]]
                                                    [:j [:open-app "JetBrains Toolbox"]]
                                                    [:n [:open-app "Notion"]]
                                                    [:p [:open-app "PyCharm"]]
-                                                   [:s [:open-app "Safari"]]
+                                                   [:y [:open-app "Spotify"]]
                                                    [:v [:open-app "Visual Studio Code"]]
                                                    [:w [:open-app "WebStorm"]]] }
     { :des "Open tabs mode"               :rules [:caps-mode
